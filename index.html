@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="연세메디컬센터 - 믿을 수 있는 의료 서비스" />
+  <title>연세메디컬센터 | Yonsei Medical Center</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       TOPBAR — 긴급연락처 / 진료시간 요약
+       ============================================================ -->
+  <div class="topbar">
+    <div class="inner">
+      <ul class="topbar-info">
+        <li>
+          <svg class="ico" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <strong>응급 · 야간 진료</strong>&nbsp;032-000-0000
+        </li>
+        <li>
+          <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          평일 09:00–18:00 &nbsp;|&nbsp; 토요일 09:00–13:00 &nbsp;|&nbsp; 일·공휴일 휴진
+        </li>
+      </ul>
+      <ul class="topbar-util">
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+        <li><a href="/admin" class="util-admin">관리자</a></li><!-- 백엔드: 인증 후 노출 -->
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       HEADER — 로고 / GNB / 예약 CTA
+       ============================================================ -->
+  <header class="header" id="header">
+    <div class="inner">
+      <a href="/" class="logo">
+        <div class="logo-mark">
+          <span class="cross">+</span>
+        </div>
+        <div class="logo-text">
+          <strong>연세메디컬센터</strong>
+          <span>Yonsei Medical Center</span>
+        </div>
+      </a>
+
+      <nav class="gnb" id="gnb">
+        <ul>
+          <li class="has-sub">
+            <a href="#">병원 안내</a>
+            <div class="mega-menu">
+              <ul>
+                <li><a href="#">병원 소개</a></li>
+                <li><a href="#">인사말</a></li>
+                <li><a href="#">시설 안내</a></li>
+                <li><a href="#">오시는 길</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="has-sub">
+            <a href="#">진료과 · 센터</a>
+            <div class="mega-menu">
+              <ul>
+                <li><a href="#">내과</a></li>
+                <li><a href="#">외과</a></li>
+                <li><a href="#">정형외과</a></li>
+                <li><a href="#">신경과</a></li>
+                <li><a href="#">소아청소년과</a></li>
+                <li><a href="#">피부과</a></li>
+                <li><a href="#">건강검진센터</a></li>
+                <li><a href="#">영상의학과</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="has-sub">
+            <a href="#">의료진</a>
+            <div class="mega-menu">
+              <ul>
+                <li><a href="#">의료진 소개</a></li>
+                <li><a href="#">전문 분야</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="has-sub">
+            <a href="#">진료 안내</a>
+            <div class="mega-menu">
+              <ul>
+                <li><a href="#">외래 진료</a></li>
+                <li><a href="#">입·퇴원 안내</a></li>
+                <li><a href="#">진료비 안내</a></li>
+                <li><a href="#">증명서 발급</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="#">건강 정보</a></li>
+          <li><a href="#">공지사항</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#reservation" class="btn btn-primary scroll-to">진료 예약</a>
+        <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 모바일 풀 메뉴 -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <a href="#reservation" class="btn btn-primary w-full">진료 예약</a>
+      <ul>
+        <li><a href="#">병원 안내</a></li>
+        <li><a href="#">진료과 · 센터</a></li>
+        <li><a href="#">의료진</a></li>
+        <li><a href="#">진료 안내</a></li>
+        <li><a href="#">건강 정보</a></li>
+        <li><a href="#">공지사항</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         HERO SECTION
+         ============================================================ -->
+    <section class="hero" id="hero">
+      <!-- 백엔드: /api/banners → 슬라이드 목록 동적 렌더링 -->
+      <div class="hero-slider" id="heroSlider" data-api="/api/banners">
+
+        <div class="hero-slide active" style="background: linear-gradient(120deg,#0d2d5e 0%,#1a4f8a 60%,#2bbfb3 100%);">
+          <div class="inner">
+            <div class="hero-content">
+              <p class="hero-tag">믿을 수 있는 의료 서비스</p>
+              <h1>환자 중심의 따뜻한<br><em>의료를 실천합니다</em></h1>
+              <p class="hero-desc">연세메디컬센터는 최신 의료 장비와<br>전문 의료진이 함께합니다.</p>
+              <div class="hero-btns">
+                <a href="#reservation" class="btn btn-white scroll-to">진료 예약하기</a>
+                <a href="#departments" class="btn btn-ghost scroll-to">진료과 안내</a>
+              </div>
+            </div>
+            <div class="hero-visual">
+              <div class="img-ph hero-ph mBan1"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-slide" style="background: linear-gradient(120deg,#0a3d3a 0%,#0e6b63 60%,#2bbfb3 100%);">
+          <div class="inner">
+            <div class="hero-content">
+              <p class="hero-tag">2026 건강검진 패키지</p>
+              <h1>건강한 내일을 위한<br><em>정밀 건강검진</em></h1>
+              <p class="hero-desc">맞춤형 건강검진 프로그램으로<br>당신의 건강을 지켜드립니다.</p>
+              <div class="hero-btns">
+                <a href="#reservation" class="btn btn-white scroll-to">검진 예약하기</a>
+                <a href="#" class="btn btn-ghost">검진 안내</a>
+              </div>
+            </div>
+            <div class="hero-visual">
+              <div class="img-ph hero-ph mBan2"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- 슬라이드 컨트롤 -->
+      <div class="hero-controls">
+        <button class="hero-prev" aria-label="이전">&#8592;</button>
+        <div class="hero-dots" id="heroDots"></div>
+        <button class="hero-next" aria-label="다음">&#8594;</button>
+        <button class="hero-pause" id="heroPause" aria-label="일시정지">&#10074;&#10074;</button>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         QUICK MENU — 주요 기능 바로가기
+         ============================================================ -->
+    <section class="quick-menu">
+      <div class="inner">
+        <ul class="quick-list">
+          <li>
+            <a href="#reservation" class="scroll-to">
+              <div class="q-icon q-blue">
+                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </div>
+              <span>진료 예약</span>
+            </a>
+          </li>
+          <li>
+            <a href="#departments" class="scroll-to">
+              <div class="q-icon q-teal">
+                <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              </div>
+              <span>진료과 안내</span>
+            </a>
+          </li>
+          <li>
+            <a href="#doctors" class="scroll-to">
+              <div class="q-icon q-navy">
+                <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <span>의료진 소개</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="q-icon q-green">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </div>
+              <span>증명서 발급</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="q-icon q-orange">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </div>
+              <span>건강 정보</span>
+            </a>
+          </li>
+          <li>
+            <a href="#location" class="scroll-to">
+              <div class="q-icon q-purple">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <span>오시는 길</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         DEPARTMENTS — 진료과·센터
+         ============================================================ -->
+    <section class="section departments" id="departments">
+      <div class="inner">
+        <div class="section-head">
+          <div class="section-label">진료과 · 센터</div>
+          <h2 class="section-title">전문적인 진료를 제공합니다</h2>
+          <p class="section-desc">각 분야의 전문의가 최선의 진료를 약속드립니다</p>
+        </div>
+
+        <!-- 백엔드: /api/departments → 카드 동적 렌더링 -->
+        <div class="dept-grid" id="deptGrid" data-api="/api/departments">
+
+          <a href="#" class="dept-card">
+            <div class="dept-icon">
+              <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3>내과</h3>
+            <p>소화기·호흡기·순환기<br>내분비 질환 전문 진료</p>
+            <span class="dept-more">자세히 보기 →</span>
+          </a>
+
+          <a href="#" class="dept-card">
+            <div class="dept-icon">
+              <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </div>
+            <h3>외과</h3>
+            <p>복강경·최소침습<br>수술 전문 클리닉</p>
+            <span class="dept-more">자세히 보기 →</span>
+          </a>
+
+          <a href="#" class="dept-card">
+            <div class="dept-icon">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="22" x2="12" y2="11"/><path d="M5 6H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h1"/><path d="M19 6h1a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-1"/><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/></svg>
+            </div>
+            <h3>정형외과</h3>
+            <p>관절·척추·스포츠 의학<br>재활 치료 전문</p>
+            <span class="dept-more">자세히 보기 →</span>
+          </a>
+
+          <a href="#" class="dept-card">
+            <div class="dept-icon">
+              <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3>신경과</h3>
+            <p>두통·어지럼증·뇌혈관<br>신경계 질환 진료</p>
+            <span class="dept-more">자세히 보기 →</span>
+          </a>
+
+          <a href="#" class="dept-card">
+            <div class="dept-icon">
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>소아청소년과</h3>
+            <p>영유아 건강검진부터<br>청소년 성장 관리까지</p>
+            <span class="dept-more">자세히 보기 →</span>
+          </a>
+
+          <a href="#" class="dept-card dept-card--accent">
+            <div class="dept-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3>건강검진센터</h3>
+            <p>종합검진·공단검진<br>맞춤형 패키지 운영</p>
+            <span class="dept-more">검진 예약 →</span>
+          </a>
+
+          <a href="#" class="dept-card">
+            <div class="dept-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            </div>
+            <h3>영상의학과</h3>
+            <p>CT·MRI·초음파<br>정밀 영상 진단</p>
+            <span class="dept-more">자세히 보기 →</span>
+          </a>
+
+          <a href="#" class="dept-card">
+            <div class="dept-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <h3>피부과</h3>
+            <p>피부 질환·레이저<br>미용 피부 클리닉</p>
+            <span class="dept-more">자세히 보기 →</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         DOCTORS — 의료진 소개
+         ============================================================ -->
+    <section class="section section--gray doctors" id="doctors">
+      <div class="inner">
+        <div class="section-head">
+          <div class="section-label">의료진 소개</div>
+          <h2 class="section-title">최고의 전문의가 함께합니다</h2>
+          <p class="section-desc">각 분야 전문의의 풍부한 경험과 노하우를 믿으세요</p>
+        </div>
+
+        <!-- 탭 필터 -->
+        <!-- 백엔드: 탭 클릭 시 /api/doctors?dept=내과 등 쿼리 파라미터 전달 -->
+        <div class="dept-tabs" id="deptTabs">
+          <button class="tab-btn active" data-dept="all">전체</button>
+          <button class="tab-btn" data-dept="내과">내과</button>
+          <button class="tab-btn" data-dept="외과">외과</button>
+          <button class="tab-btn" data-dept="정형외과">정형외과</button>
+          <button class="tab-btn" data-dept="신경과">신경과</button>
+          <button class="tab-btn" data-dept="소아청소년과">소아청소년과</button>
+        </div>
+
+        <!-- 백엔드: /api/doctors → 의료진 카드 동적 렌더링 -->
+        <div class="doctor-grid" id="doctorGrid" data-api="/api/doctors">
+
+          <div class="doctor-card" data-dept="내과">
+            <div class="doctor-photo">
+              <div class="img-ph doctor-ph"><span>의사 사진<br>300×380px</span></div>
+              <div class="doctor-dept-tag">내과</div>
+            </div>
+            <div class="doctor-info">
+              <h3>김철수 <span>원장</span></h3>
+              <ul class="doctor-specs">
+                <li>연세대학교 의과대학 졸업</li>
+                <li>서울대학교병원 내과 전문의</li>
+                <li>대한내과학회 정회원</li>
+              </ul>
+              <div class="doctor-tags">
+                <span>소화기</span><span>간질환</span><span>대장내시경</span>
+              </div>
+              <a href="#reservation" class="btn btn-outline-blue scroll-to">예약하기</a>
+            </div>
+          </div>
+
+          <div class="doctor-card" data-dept="정형외과">
+            <div class="doctor-photo">
+              <div class="img-ph doctor-ph"><span>의사 사진<br>300×380px</span></div>
+              <div class="doctor-dept-tag">정형외과</div>
+            </div>
+            <div class="doctor-info">
+              <h3>이영희 <span>원장</span></h3>
+              <ul class="doctor-specs">
+                <li>고려대학교 의과대학 졸업</li>
+                <li>서울아산병원 정형외과 전공의</li>
+                <li>관절경·스포츠의학 세부전문의</li>
+              </ul>
+              <div class="doctor-tags">
+                <span>무릎관절</span><span>어깨</span><span>스포츠손상</span>
+              </div>
+              <a href="#reservation" class="btn btn-outline-blue scroll-to">예약하기</a>
+            </div>
+          </div>
+
+          <div class="doctor-card" data-dept="신경과">
+            <div class="doctor-photo">
+              <div class="img-ph doctor-ph"><span>의사 사진<br>300×380px</span></div>
+              <div class="doctor-dept-tag">신경과</div>
+            </div>
+            <div class="doctor-info">
+              <h3>박민준 <span>과장</span></h3>
+              <ul class="doctor-specs">
+                <li>성균관대학교 의과대학 졸업</li>
+                <li>삼성서울병원 신경과 전문의</li>
+                <li>대한신경과학회 정회원</li>
+              </ul>
+              <div class="doctor-tags">
+                <span>두통</span><span>뇌혈관</span><span>치매</span>
+              </div>
+              <a href="#reservation" class="btn btn-outline-blue scroll-to">예약하기</a>
+            </div>
+          </div>
+
+          <div class="doctor-card" data-dept="소아청소년과">
+            <div class="doctor-photo">
+              <div class="img-ph doctor-ph"><span>의사 사진<br>300×380px</span></div>
+              <div class="doctor-dept-tag">소아청소년과</div>
+            </div>
+            <div class="doctor-info">
+              <h3>최수연 <span>원장</span></h3>
+              <ul class="doctor-specs">
+                <li>한양대학교 의과대학 졸업</li>
+                <li>국립어린이병원 소아과 전공의</li>
+                <li>영유아 발달·성장 전문</li>
+              </ul>
+              <div class="doctor-tags">
+                <span>영유아검진</span><span>성장</span><span>알레르기</span>
+              </div>
+              <a href="#reservation" class="btn btn-outline-blue scroll-to">예약하기</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="center-wrap">
+          <a href="#" class="btn btn-outline-dark">의료진 전체보기</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         STATS — 신뢰 지표
+         ============================================================ -->
+    <section class="stats-section">
+      <div class="inner">
+        <ul class="stats-list">
+          <li>
+            <strong class="stat-num" data-target="32">0</strong><span class="stat-unit">년</span>
+            <p>개원 연혁</p>
+          </li>
+          <li>
+            <strong class="stat-num" data-target="18">0</strong><span class="stat-unit">명</span>
+            <p>전문의</p>
+          </li>
+          <li>
+            <strong class="stat-num" data-target="120000">0</strong><span class="stat-unit">명+</span>
+            <p>누적 진료 환자</p>
+          </li>
+          <li>
+            <strong class="stat-num" data-target="98">0</strong><span class="stat-unit">%</span>
+            <p>환자 만족도</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         NOTICE + HEALTH COLUMN — 공지사항 / 건강 정보
+         ============================================================ -->
+    <section class="section board-section">
+      <div class="inner">
+        <div class="board-grid">
+
+          <!-- 공지사항 — 백엔드: /api/notices?limit=5 -->
+          <div class="board-col" id="noticeBoard" data-api="/api/notices">
+            <div class="board-head">
+              <h3>공지사항</h3>
+              <a href="#" class="more-link">전체보기 +</a>
+            </div>
+            <ul class="notice-list">
+              <li>
+                <span class="notice-tag tag-notice">공지</span>
+                <a href="#">2026년 설 연휴 진료 안내 (1/25~1/30)</a>
+                <span class="notice-date">2026.01.10</span>
+              </li>
+              <li>
+                <span class="notice-tag tag-event">이벤트</span>
+                <a href="#">봄맞이 건강검진 할인 패키지 안내</a>
+                <span class="notice-date">2026.03.02</span>
+              </li>
+              <li>
+                <span class="notice-tag tag-notice">공지</span>
+                <a href="#">MRI 장비 교체 및 업그레이드 완료 안내</a>
+                <span class="notice-date">2026.02.20</span>
+              </li>
+              <li>
+                <span class="notice-tag tag-notice">공지</span>
+                <a href="#">진료비 카드 결제 시스템 개선 안내</a>
+                <span class="notice-date">2026.02.05</span>
+              </li>
+              <li>
+                <span class="notice-tag">일반</span>
+                <a href="#">원내 주차장 이용 안내 변경사항</a>
+                <span class="notice-date">2026.01.28</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 건강 칼럼 — 백엔드: /api/health-columns?limit=3 -->
+          <div class="board-col" id="healthBoard" data-api="/api/health-columns">
+            <div class="board-head">
+              <h3>건강 칼럼</h3>
+              <a href="#" class="more-link">전체보기 +</a>
+            </div>
+            <div class="health-cards">
+              <a href="#" class="health-card">
+                <div class="img-ph health-ph"><span>건강칼럼 썸네일<br>400×220px</span></div>
+                <div class="health-card-body">
+                  <span class="health-tag">내과</span>
+                  <h4>봄철 알레르기 비염, 미리 예방하는 방법</h4>
+                  <p>봄이 되면 악화되는 알레르기 비염. 미리 알고 예방하는...</p>
+                  <span class="health-date">2026.03.15 · 김철수 원장</span>
+                </div>
+              </a>
+              <a href="#" class="health-card health-card--sm">
+                <div class="health-card-body">
+                  <span class="health-tag">정형외과</span>
+                  <h4>무릎 통증의 원인과 자가 관리법</h4>
+                  <span class="health-date">2026.03.08 · 이영희 원장</span>
+                </div>
+              </a>
+              <a href="#" class="health-card health-card--sm">
+                <div class="health-card-body">
+                  <span class="health-tag">소아과</span>
+                  <h4>우리 아이 성장판 검사, 언제 받아야 할까?</h4>
+                  <span class="health-date">2026.03.01 · 최수연 원장</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         RESERVATION — 진료 예약 폼
+         백엔드: POST /api/reservations
+         ============================================================ -->
+    <section class="section reservation-section" id="reservation">
+      <div class="inner">
+        <div class="reservation-wrap">
+          <div class="reservation-info">
+            <div class="section-label">온라인 예약</div>
+            <h2>빠르고 편리한<br>진료 예약</h2>
+            <p>원하는 진료과와 의료진을 선택하고<br>간편하게 예약하세요.</p>
+            <ul class="res-guide">
+              <li>
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                예약 확인 문자를 보내드립니다
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                당일 예약은 전화 문의 바랍니다 (032-000-0000)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                예약 변경·취소는 마이페이지에서 가능합니다
+              </li>
+            </ul>
+          </div>
+
+          <!--
+            [백엔드 연동 포인트]
+            - action: POST /api/reservations
+            - 성공 응답: { success: true, reservationNo: "2026-00001" }
+            - 실패 응답: { success: false, message: "에러 메시지" }
+            - 인증: Authorization: Bearer <JWT token> 헤더 필요
+          -->
+          <form class="reservation-form" id="reservationForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="patientName">이름 <span class="req">*</span></label>
+                <input type="text" id="patientName" name="patientName" placeholder="홍길동" required />
+                <span class="form-error" id="err-patientName"></span>
+              </div>
+              <div class="form-group">
+                <label for="phone">연락처 <span class="req">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required />
+                <span class="form-error" id="err-phone"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="dept">진료과 <span class="req">*</span></label>
+                <!-- 백엔드: /api/departments 로 옵션 동적 로드 가능 -->
+                <select id="dept" name="dept" required>
+                  <option value="">진료과 선택</option>
+                  <option value="내과">내과</option>
+                  <option value="외과">외과</option>
+                  <option value="정형외과">정형외과</option>
+                  <option value="신경과">신경과</option>
+                  <option value="소아청소년과">소아청소년과</option>
+                  <option value="피부과">피부과</option>
+                  <option value="건강검진">건강검진센터</option>
+                </select>
+                <span class="form-error" id="err-dept"></span>
+              </div>
+              <div class="form-group">
+                <label for="doctor">의료진</label>
+                <!-- 백엔드: 진료과 선택 시 /api/doctors?dept=내과 로 동적 로드 -->
+                <select id="doctor" name="doctor">
+                  <option value="">의료진 선택 (선택사항)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="reserveDate">희망 날짜 <span class="req">*</span></label>
+                <input type="date" id="reserveDate" name="reserveDate" required />
+                <span class="form-error" id="err-reserveDate"></span>
+              </div>
+              <div class="form-group">
+                <label for="reserveTime">희망 시간</label>
+                <select id="reserveTime" name="reserveTime">
+                  <option value="">시간 선택</option>
+                  <option value="09:00">오전 09:00</option>
+                  <option value="09:30">오전 09:30</option>
+                  <option value="10:00">오전 10:00</option>
+                  <option value="10:30">오전 10:30</option>
+                  <option value="11:00">오전 11:00</option>
+                  <option value="11:30">오전 11:30</option>
+                  <option value="14:00">오후 02:00</option>
+                  <option value="14:30">오후 02:30</option>
+                  <option value="15:00">오후 03:00</option>
+                  <option value="15:30">오후 03:30</option>
+                  <option value="16:00">오후 04:00</option>
+                  <option value="16:30">오후 04:30</option>
+                  <option value="17:00">오후 05:00</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="symptoms">증상 · 문의사항</label>
+              <textarea id="symptoms" name="symptoms" rows="4" placeholder="증상이나 문의사항을 간략히 적어주세요."></textarea>
+            </div>
+
+            <div class="form-check">
+              <input type="checkbox" id="agreePrivacy" name="agreePrivacy" required />
+              <label for="agreePrivacy">
+                <a href="#" class="link-underline">개인정보 수집 및 이용</a>에 동의합니다 <span class="req">*</span>
+              </label>
+              <span class="form-error" id="err-agreePrivacy"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+              <span class="btn-text">예약 신청하기</span>
+              <span class="btn-loading" style="display:none;">처리 중...</span>
+            </button>
+
+            <!-- 백엔드 응답 메시지 표시 영역 -->
+            <div class="form-result" id="formResult" style="display:none;"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         HOURS — 진료 시간
+         ============================================================ -->
+    <section class="section section--gray hours-section">
+      <div class="inner">
+        <div class="section-head">
+          <div class="section-label">진료 시간</div>
+          <h2 class="section-title">진료 시간 안내</h2>
+        </div>
+        <div class="hours-wrap">
+          <table class="hours-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>월</th>
+                <th>화</th>
+                <th>수</th>
+                <th>목</th>
+                <th>금</th>
+                <th class="sat">토</th>
+                <th class="sun">일·공휴일</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="hour-label">오전</td>
+                <td>09:00<br>~12:30</td>
+                <td>09:00<br>~12:30</td>
+                <td>09:00<br>~12:30</td>
+                <td>09:00<br>~12:30</td>
+                <td>09:00<br>~12:30</td>
+                <td class="sat">09:00<br>~13:00</td>
+                <td class="sun closed">휴진</td>
+              </tr>
+              <tr>
+                <td class="hour-label">오후</td>
+                <td>14:00<br>~18:00</td>
+                <td>14:00<br>~18:00</td>
+                <td>14:00<br>~18:00</td>
+                <td>14:00<br>~18:00</td>
+                <td>14:00<br>~18:00</td>
+                <td class="sat closed">—</td>
+                <td class="sun closed">휴진</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="hours-note">
+            <p>※ 점심 시간: 12:30 – 14:00</p>
+            <p>※ 야간·응급 진료: 평일 18:00 이후 전화 문의 <strong>032-000-0000</strong></p>
+            <p>※ 진료과별 진료 시간이 다를 수 있으니 사전에 확인 바랍니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         LOCATION — 오시는 길
+         ============================================================ -->
+    <section class="section location-section" id="location">
+      <div class="inner">
+        <div class="section-head">
+          <div class="section-label">오시는 길</div>
+          <h2 class="section-title">찾아오시는 방법</h2>
+        </div>
+        <div class="location-wrap">
+          <!-- 백엔드/프론트: 카카오맵 or 네이버맵 API 키 적용 -->
+          <div class="map-wrap" id="mapWrap">
+            <!-- 실 작업 시: kakao.maps.load(() => { ... }) 로 교체 -->
+            <div class="img-ph map-ph">
+              <span>카카오맵 또는 네이버맵<br>API 키 연동 영역<br>(지도 API 적용 시 이 영역 제거)</span>
+            </div>
+          </div>
+          <div class="location-info">
+            <ul class="location-list">
+              <li>
+                <div class="loc-icon">
+                  <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <strong>주소</strong>
+                  <p>인천광역시 연수구 센트럴로 000<br>연세메디컬타워 0층</p>
+                </div>
+              </li>
+              <li>
+                <div class="loc-icon">
+                  <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                </div>
+                <div>
+                  <strong>버스</strong>
+                  <p>연수구청역 하차 후 도보 5분<br>10번, 15번, 22번, 순환버스</p>
+                </div>
+              </li>
+              <li>
+                <div class="loc-icon">
+                  <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                </div>
+                <div>
+                  <strong>지하철</strong>
+                  <p>인천 1호선 연수역 2번 출구<br>도보 7분 / 환승 버스 2정거장</p>
+                </div>
+              </li>
+              <li>
+                <div class="loc-icon">
+                  <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                </div>
+                <div>
+                  <strong>주차</strong>
+                  <p>지하 1~3층 주차 가능 (200면)<br>진료 시 1시간 무료, 이후 10분당 500원</p>
+                </div>
+              </li>
+            </ul>
+            <a href="https://map.kakao.com" target="_blank" rel="noopener" class="btn btn-primary">길찾기</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer-inner inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo">
+            <div class="logo-mark logo-mark--sm">
+              <span class="cross">+</span>
+            </div>
+            <div class="logo-text">
+              <strong>연세메디컬센터</strong>
+              <span>Yonsei Medical Center</span>
+            </div>
+          </div>
+          <p class="footer-slogan">환자를 가족처럼, 건강을 최우선으로</p>
+          <div class="footer-contact">
+            <p><strong>대표전화</strong> 032-000-0000</p>
+            <p><strong>응급·야간</strong> 032-000-0001</p>
+            <p><strong>이메일</strong> info@ymc.kr</p>
+          </div>
+        </div>
+
+        <nav class="footer-nav">
+          <div class="fnav-col">
+            <h5>병원 안내</h5>
+            <ul>
+              <li><a href="#">병원 소개</a></li>
+              <li><a href="#">시설 안내</a></li>
+              <li><a href="#">오시는 길</a></li>
+            </ul>
+          </div>
+          <div class="fnav-col">
+            <h5>진료 안내</h5>
+            <ul>
+              <li><a href="#">진료과 안내</a></li>
+              <li><a href="#">의료진 소개</a></li>
+              <li><a href="#">진료 시간</a></li>
+            </ul>
+          </div>
+          <div class="fnav-col">
+            <h5>환자 서비스</h5>
+            <ul>
+              <li><a href="#reservation" class="scroll-to">진료 예약</a></li>
+              <li><a href="#">증명서 발급</a></li>
+              <li><a href="#">건강 정보</a></li>
+            </ul>
+          </div>
+          <div class="fnav-col">
+            <h5>고객 지원</h5>
+            <ul>
+              <li><a href="#">공지사항</a></li>
+              <li><a href="#">자주 묻는 질문</a></li>
+              <li><a href="#">개인정보처리방침</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="biz-info">
+          대표자: 김철수 &nbsp;|&nbsp; 사업자등록번호: 000-00-00000 &nbsp;|&nbsp;
+          의료기관 개설 신고번호: 제2026-인천연수-0000호<br>
+          주소: 인천광역시 연수구 센트럴로 000 연세메디컬타워 &nbsp;|&nbsp;
+          개인정보보호책임자: 이영희
+        </p>
+        <p class="copyright">© 2026 Yonsei Medical Center. All Rights Reserved. &nbsp; Designed by <strong>ELCO STUDIO</strong></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 플로팅 사이드 버튼 -->
+  <div class="floating-side" id="floatingSide">
+    <a href="tel:032-000-0000" class="float-side-btn call" title="전화 문의">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.13 12.5 19.79 19.79 0 0 1 1.07 4.18 2 2 0 0 1 3.06 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.04 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>전화</span>
+    </a>
+    <a href="#reservation" class="float-side-btn reserve scroll-to" title="진료 예약">
+      <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <span>예약</span>
+    </a>
+    <button class="float-side-btn top-btn" id="topBtn" title="맨 위로">
+      <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+      <span>TOP</span>
+    </button>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

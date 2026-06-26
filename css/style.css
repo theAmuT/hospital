@@ -107,6 +107,7 @@ input, select, textarea { font-family: inherit; }
   color: var(--teal);
   margin-bottom: 10px;
 }
+
 .section-title {
   font-size: 34px;
   font-weight: 700;
